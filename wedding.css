@@ -3,7 +3,7 @@ body, html {
 }
 body {
     overflow: auto;
-    background-image: url("images/background.jpg");
+    background-image: url("images/headerBackground.jpg");
     background-repeat:  no-repeat;
     background-size: 100%;
     background-attachment: fixed;
