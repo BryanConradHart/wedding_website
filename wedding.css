@@ -33,6 +33,14 @@ main {
 
 section {
     padding: 10%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section > header ~ * {
+    margin: 2em 0;
 }
 
 nav {
@@ -96,30 +104,33 @@ time {
     font-size: 100%;
 }
 
-ul.schedule, ul.accommodations {
+ul.schedule, ul.accommodations, ul.dresscode {
     margin-left:auto;
     margin-right:auto;
     overflow: hidden;
 }
 
-ul.schedule li, ul.accommodations li{
+ul.schedule li, ul.accommodations li, ul.dresscode li{
     display: flex;
     justify-content: space-between;
     overflow:hidden;
 }
-ul.schedule li span:first-child, ul.accommodations li span:first-child {
-    flex:none;
+ul.schedule li span:first-child, ul.accommodations li span:first-child, ul.dresscode li span:first-child {
     white-space: nowrap;
     overflow: hidden;
 }
-ul.schedule li span:first-child::after, ul.accommodations li span:first-child::after {
+ul.schedule li span:first-child::after, ul.accommodations li span:first-child::after, ul.dresscode li span:first-child::after {
     content:":";
 }
-ul.schedule li span:nth-child(2), ul.accommodations li span:nth-child(2){
-    flex: auto;
-    text-align: right;
-    display:inline-block;
+ul.schedule li span:nth-child(2), ul.accommodations li span:nth-child(2), ul.dresscode li span:nth-child(2){
     overflow:hidden;
+}
+
+.notes {
+    font-style: italic;
+}
+.notes::before {
+    content: "Note: ";
 }
 
 iframe.map {
@@ -130,6 +141,19 @@ iframe.map {
 
 #accommodations iframe.map {
     height: 100px;
+}
+
+/* parallax backgrounds */
+#saturday {
+    background-image: url("images/saturdayBackground.jpg");
+}
+
+#sunday {
+    background-image: url("images/sundayBackground.jpg");
+}
+
+#accommodations {
+    background-image: url("images/accommodationsBackground.jpg");
 }
 
 
