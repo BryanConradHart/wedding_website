@@ -32,15 +32,18 @@ main {
 }
 
 section {
+    border-top: 10em solid white;
+}
+
+section, section#party .profile {
     padding: 10%;
+}
+
+section, #party .profile {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-section > header ~ * {
-    margin: 2em 0;
 }
 
 nav {
@@ -134,13 +137,60 @@ ul.schedule li span:nth-child(2), ul.accommodations li span:nth-child(2), ul.dre
 }
 
 iframe.map {
+    box-sizing: border-box;
     height:400px;
     width:100%;
     display:block;
+    border: 1em solid white;
 }
 
 #accommodations iframe.map {
     height: 100px;
+}
+
+section#party, section#party div {
+    padding: 0;
+}
+
+section#party {
+    padding-top:10%;
+}
+
+#party .profile::before {
+    content:" ";
+    background-size: contain;
+    width:5em;
+    height:5em;
+    float:left;
+} 
+
+/* profile pics */
+#carolyn::before {
+    background-image:url("images/carolProfile.jpg");
+}
+
+#alicia::before {
+    background-image:url("images/aliceProfile.jpg");
+}
+
+#meagan::before {
+    background-image:url("images/meaganProfile.jpg");
+}
+
+#kiyoshi::before {
+    background-image:url("images/kiyoProfile.jpg");
+}
+
+#fraser::before {
+    background-image:url("images/fraserProfile.jpg");
+}
+
+#trevor::before {
+    background-image:url("images/trevorProfile.jpg");
+}
+
+#jaroslaw::before {
+    background-image:url("images/jaroProfile.jpg");
 }
 
 /* parallax backgrounds */
@@ -154,6 +204,34 @@ iframe.map {
 
 #accommodations {
     background-image: url("images/accommodationsBackground.jpg");
+}
+
+#carolyn {
+    background-image: url("images/carolBackground.jpg");
+}
+
+#alicia {
+    background-image: url("images/aliceBackground.jpg");
+}
+
+#meagan {
+    background-image: url("images/meaganBackground.jpg");
+}
+
+#kiyoshi {
+    background-image: url("images/kiyoBackground.jpg");
+}
+
+#fraser {
+    background-image: url("images/fraserBackground.jpg");
+}
+
+#trevor {
+    background-image: url("images/trevorBackground.jpg");
+}
+
+#jaroslaw {
+    background-image: url("images/jaroBackground.jpg");
 }
 
 
@@ -177,6 +255,11 @@ iframe.map {
     header.title{
         font-size: 150%;
     }
+
+    #party .profile::before {
+        width:8em;
+        height:8em;
+    } 
 }
 
 /* medium screens */
@@ -184,14 +267,14 @@ iframe.map {
     header.title{
         font-size: 200%;
     }
-    section {
+    section, section#party .profile {
         padding: 3em 20%;
     }
 }
 
 /* large screens */
 @media(min-width: 100em) {
-    section {
+    section, section#party .profile {
         padding: 3em 30%;
     }
 }
