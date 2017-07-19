@@ -32,7 +32,7 @@ main {
 }
 
 section {
-    border-top: 10em solid white;
+    border-top: 15em solid white;
 }
 
 section, section#party .profile {
@@ -154,10 +154,6 @@ iframe.map {
 
 section#party, section#party div {
     padding: 0;
-}
-
-section#party {
-    padding-top:10%;
 }
 
 #party .profile::before {
