@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Monsieur+La+Doulaise|Tangerine|Josefin+Sans');
+
 body, html {
     margin:0px;
 }
@@ -7,19 +9,25 @@ body {
     background-repeat:  no-repeat;
     background-size: 100%;
     background-attachment: fixed;
-    font-family: Tahoma, 'Segoe UI', Calibri, Arial, sans-serif;
+    font-family: 'Josefin Sans', Tahoma, 'Segoe UI', Calibri, Arial, sans-serif;
     text-align: center;
     background-color: black;
 }
 header {
     margin-bottom: 1em;
 }
+
+h1, h2, h3 {
+    font-family: 'Tangerine', Tahoma, 'Segoe UI', Calibri, Arial, sans-serif;
+}
+
 header.title{
     margin: 56.17283950617284% 0 0 0;
 }
 header.title svg {
+    font-family: 'Josefin Sans', Tahoma, 'Segoe UI', Calibri, Arial, sans-serif;
     fill: white;
-    height: 300px;
+    height: 150px;
     width:100%;
     display:block;
 }
@@ -29,10 +37,11 @@ header h1, header h2 {
 
 main {
     background-color: white;
+    font-size: 150%;
 }
 
 section {
-    border-top: 15em solid white;
+    border-top: 5em solid white;
 }
 
 section, section#party .profile {
@@ -107,9 +116,22 @@ time {
     font-size: 100%;
 }
 
-#accommodations div + div{
-    margin-top: 5em;
+#welcome header {
+    font-size: 150%;
 }
+
+#accommodations div h3 {
+    margin-bottom:0.25em;
+}
+
+#accommodations div {
+    margin-top: 3em;
+}
+
+#accommodations div ul {
+    margin-top: 0;
+}
+
 
 ul.schedule, ul.accommodations, ul.dresscode {
     margin-left:auto;
@@ -118,19 +140,32 @@ ul.schedule, ul.accommodations, ul.dresscode {
 }
 
 ul.schedule li, ul.accommodations li, ul.dresscode li{
-    display: flex;
-    justify-content: space-between;
     overflow:hidden;
+    text-align: center;
 }
-ul.schedule li span:first-child, ul.accommodations li span:first-child, ul.dresscode li span:first-child {
-    white-space: nowrap;
-    overflow: hidden;
+ul.schedule li + li:before, ul.accommodations li + li:before, ul.dresscode li + li:before{
+    position: relative;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    height:1px;
+    background-color:black;
+    content: " ";
+    display:block;
+}
+ul.schedule li span, ul.accommodations li span, ul.dresscode li span{
+    display: block;
+    width:100%;
+}
+ul.schedule li span:first-child, ul.accommodations li span:first-child, ul.dresscode li span:first-child{
+    font-weight: bold;
 }
 ul.schedule li span:first-child::after, ul.accommodations li span:first-child::after, ul.dresscode li span:first-child::after {
     content:":";
 }
-ul.schedule li span:nth-child(2), ul.accommodations li span:nth-child(2), ul.dresscode li span:nth-child(2){
-    overflow:hidden;
+ul.schedule li span:only-child, ul.accommodations li span:only-child, ul.dresscode li span:only-child{
+    font-weight: normal;
+    font-weight: initial;
 }
 
 .notes {
@@ -163,6 +198,11 @@ section#party, section#party div {
     height:5em;
     float:left;
 } 
+
+#party .profile h3 span {
+    overflow: hidden;
+    white-space: nowrap;
+}
 
 /* profile pics */
 #carolyn::before {
@@ -255,17 +295,51 @@ section#party, section#party div {
     header.title{
         font-size: 150%;
     }
-
+    header.title svg {
+        fill: white;
+        height: 300px;
+    }
+    h1 {
+        font-family: 'Monsieur La Doulaise', Tahoma, 'Segoe UI', Calibri, Arial, sans-serif;
+        font-size: 175%;
+    }
     #party .profile::before {
         width:8em;
         height:8em;
     } 
+    ul.schedule li, ul.accommodations li, ul.dresscode li{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+    ul.schedule li span:first-child, ul.accommodations li span:first-child, ul.dresscode li span:first-child{
+        font-weight: normal;
+        overflow:none;
+        white-space: nowrap;
+        text-align: left;
+    }
+    ul.schedule li span:nth-child(2), ul.accommodations li span:nth-child(2), ul.dresscode li span:nth-child(2){
+        text-align: right;
+    }
+    ul.schedule li span:only-child, ul.accommodations li span:only-child, ul.dresscode li span:only-child{
+        flex:auto;
+        text-align: center;
+    }
+    ul.schedule li + li:before, ul.accommodations li + li:before, ul.dresscode li + li:before{
+        display: none;
+    }
 }
 
 /* medium screens */
 @media(min-width: 50em) {
     header.title{
         font-size: 200%;
+    }
+    h2, h3 {
+        font-size: 175%;
+    }
+    h1 {
+        font-size: 185%;
     }
     section, section#party .profile {
         padding: 3em 20%;
